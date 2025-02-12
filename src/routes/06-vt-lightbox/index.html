@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lightbox with View Transition API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <main>
+      <lightbox-image target-id="lightbox-dialog">
+        <img src="/image-1.avif" alt="" />
+      </lightbox-image>
+    </main>
+
+    <dialog id="lightbox-dialog">
+      <form method="dialog">
+        <button>Close lightbox</button>
+      </form>
+    </dialog>
+    <!-- partial -->
+    <script src="./script.js"></script>
+  </body>
+</html>

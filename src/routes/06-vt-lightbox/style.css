@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: system-ui, sans-serif;
+
+  &:has(dialog[open]) {
+    overflow: hidden;
+  }
+}
+
+main {
+  display: grid;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  vertical-align: bottom;
+}
+
+lightbox-image:defined {
+  display: block;
+  cursor: zoom-in;
+}
+
+lightbox-image img {
+  max-width: 250px;
+}
+
+dialog {
+  --_gutter: 2rem;
+  padding: 1rem;
+  outline: unset;
+  border: unset;
+  background: unset;
+  max-width: calc(100vh - var(--_gutter));
+  max-height: 100vh;
+  cursor: zoom-out;
+
+  &::backdrop {
+    background: blue;
+    opacity: 0.75;
+  }
+
+  form {
+    position: absolute;
+    opacity: 0;
+  }
+
+  img {
+    max-height: calc(100vh - var(--_gutter));
+  }
+}
+
+/* ::view-transition-group(active-lightbox-image) {
+  animation-duration: 260ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+} */
